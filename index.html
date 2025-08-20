@@ -1,136 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced One-Section Portfolio</title>
 
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: #1a1a1a;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
 
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Mar 05 2025 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: #1c2526;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: pulse 10s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.1); opacity: 0.3; }
+      100% { transform: scale(1); opacity: 0.2; }
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ff5733, #14b8a6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .typing {
+      color: #14b8a6;
+      font-weight: 500;
+      font-size: 1.9rem;
+    }
+
+    .fade-content {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
+      max-width: 900px;
+      z-index: 1;
+    }
+
+    .fade-content.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .portfolio-img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+      margin-bottom: 20px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .portfolio-img:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(20, 184, 166, 0.5);
+    }
+
+    /* Vertical Navbar */
+    .vertical-nav {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      z-index: 1000;
+    }
+
+    .vertical-nav a {
+      color: #e5e7eb;
+      font-size: 1.4rem;
+      padding: 14px;
+      background: rgba(44, 44, 44, 0.9);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+    }
+
+    .vertical-nav a:hover {
+      color: #14b8a6;
+      transform: scale(1.15) translateX(-5px);
+      background: rgba(255, 87, 51, 0.2);
+      box-shadow: 0 6px 20px rgba(255, 87, 51, 0.6);
+    }
+
+    .vertical-nav a.active {
+      color: #14b8a6;
+      background: rgba(255, 87, 51, 0.3);
+      box-shadow: 0 6px 20px rgba(20, 184, 166, 0.5);
+    }
+
+    /* Contact Form */
+    .contact-form .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ff5733;
+      color: #e5e7eb;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+    }
+
+    .contact-form .form-control:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #14b8a6;
+      box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+    }
+
+    .contact-form .btn-primary {
+      background: linear-gradient(45deg, #ff5733, #14b8a6);
+      border: none;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      font-weight: 500;
+    }
+
+    .contact-form .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.7s ease, height 0.7s ease;
+    }
+
+    .contact-form .btn-primary:hover::before {
+      width: 350px;
+      height: 350px;
+    }
+
+    .contact-form .btn-primary:hover {
+      background: linear-gradient(45deg, #14b8a6, #ff5733);
+      transform: translateY(-4px);
+      box-shadow: 0 5px 15px rgba(20, 184, 166, 0.6);
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      color: #14b8a6;
+    }
+
+    .form-message.error {
+      color: #ef4444;
+    }
+
+    /* Social Icons */
+    .social-icons a {
+      color: #e5e7eb;
+      margin: 0 18px;
+      font-size: 1.9rem;
+      transition: all 0.4s ease;
+    }
+
+    .social-icons a:hover {
+      color: #14b8a6;
+      transform: translateY(-6px);
+    }
+
+    /* Skill Logos */
+    .skill-logos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-logos img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-logos img:hover {
+      transform: scale(1.2);
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+<!-- Single Section (Hero + Dynamic Content) -->
+<section class="hero" id="hero">
+  <div id="dynamic-content" class="fade-content show">
+    <!-- Default Home -->
+    <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
+    <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
+    <a href="#" class="btn btn-outline-light mt-4 dynamic-link" data-target="portfolio">Explore My Work</a>
+  </div>
+</section>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<!-- Vertical Navbar -->
+<div class="vertical-nav">
+  <a href="#" class="dynamic-link active" data-target="home" title="Home"><i class="fas fa-home"></i></a>
+  <a href="#" class="dynamic-link" data-target="about" title="About"><i class="fas fa-user"></i></a>
+  <a href="#" class="dynamic-link" data-target="portfolio" title="Portfolio"><i class="fas fa-briefcase"></i></a>
+  <a href="#" class="dynamic-link" data-target="contact" title="Contact"><i class="fas fa-envelope"></i></a>
+</div>
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Portfolio</h1>
-      </a>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  // Typing animation
+  let typed;
+  function startTyping() {
+    if (typed) typed.destroy();
+    typed = new Typed('.typing', {
+      strings: ["Web Developer", "Freelancer", "Creative Coder"],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true
+    });
+  }
+  startTyping();
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <!-- <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li> -->
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+  // Dynamic Content Data
+  const dynamicContent = document.getElementById("dynamic-content");
+  const links = document.querySelectorAll(".dynamic-link");
 
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h2>Shahzad Hassan</h2>
-        <p>I'm <span class="typed" data-typed-items="PHP / Laravel Developer, Full Stack Developer"></span><span class="typed-cursor typed-cursor--blink"></span></p>
-        <div class="social-links">
-          <a href="https://x.com/dev_hassan26" target="_blank"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.facebook.com/share/1Lc91FFGP3/" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/dev_hassan26" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/shahzad-h-523584261" target="_blank"><i class="bi bi-linkedin"></i></a>
-        </div>
+  const sections = {
+    home: `
+      <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
+      <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
+      <a href="#" class="btn btn-outline-light mt-4 dynamic-link" data-target="portfolio">Explore My Work</a>
+    `,
+    about: `
+      <h2 class="fw-bold mb-3">About Me</h2>
+      <p class="lead">I'm a passionate developer crafting immersive, responsive, and animated websites. My expertise spans <b>HTML, CSS, JavaScript, Bootstrap, WordPress, React, PHP, Laravel</b>, and more, delivering seamless user experiences.</p>
+      <p class="lead mt-3">With a focus on creativity and performance, I transform ideas into digital realities.</p>
+      <div class="skill-logos">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" title="WordPress">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" title="PHP">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" title="Laravel">
       </div>
-
-    </section><!-- /Hero Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/dev_hassan26" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/share/1Lc91FFGP3/" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/dev_hassan26" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href="https://www.linkedin.com/in/shahzad-h-523584261" target="_blank"><i class="bi bi-linkedin"></i></a>
+    `,
+    portfolio: `
+      <h2 class="fw-bold mb-4">My Projects</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" class="portfolio-img" alt="Project 1"></div>
+        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800" class="portfolio-img" alt="Project 2"></div>
+        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" class="portfolio-img" alt="Project 3"></div>
       </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
+    `,
+    contact: `
+      <h2 class="fw-bold mb-3">Get in Touch</h2>
+      <form class="contact-form mx-auto" style="max-width: 500px;" onsubmit="handleSubmit(event)">
+        <div class="mb-3">
+          <input type="text" class="form-control" id="name" placeholder="Your Name" required>
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+        <div class="mb-3">
+          <input type="email" class="form-control" id="email" placeholder="Your Email" required>
         </div>
+        <div class="mb-3">
+          <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+      <div class="social-icons mt-4">
+        <a href="https://www.linkedin.com/in/shahzad-h-523584261" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/devhassan26/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/+923473547440" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
-    </div>
-  </footer>
+    `
+  };
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  // Replace Content
+  function loadSection(target) {
+    dynamicContent.classList.remove("show");
+    links.forEach(link => link.classList.remove("active"));
+    const activeLink = Array.from(links).find(link => link.dataset.target === target);
+    if (activeLink) activeLink.classList.add("active");
+    setTimeout(() => {
+      dynamicContent.innerHTML = sections[target];
+      dynamicContent.classList.add("show");
+      if (target === "home") startTyping();
+    }, 400);
+  }
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  // Handle Form Submission
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formMessage = document.getElementById("form-message");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    if (name && email && message) {
+      formMessage.classList.remove("error", "success");
+      formMessage.classList.add("success");
+      formMessage.textContent = "Contact on Whatsapp, please!";
+      formMessage.style.display = "block";
+      event.target.reset();
+      setTimeout(() => {
+        formMessage.style.display = "none";
+      }, 3000);
+    } else {
+      formMessage.classList.remove("error", "success");
+      formMessage.classList.add("error");
+      formMessage.textContent = "Please fill out all fields.";
+      formMessage.style.display = "block";
+    }
+  }
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      loadSection(link.dataset.target);
+    });
+  });
+</script>
 </body>
-
 </html>
