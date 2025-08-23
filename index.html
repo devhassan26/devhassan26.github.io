@@ -1,290 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced One-Section Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced One-Section Portfolio</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-      background: #1a1a1a;
-      color: #e5e7eb;
-      overflow-x: hidden;
-    }
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        background: #ffffff;
+        color: #111827;
+        overflow-x: hidden;
+      }
 
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: #1c2526;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-      animation: pulse 10s infinite ease-in-out;
-      z-index: 0;
-    }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.08) 0%,
+          transparent 70%
+        );
+        animation: pulse 10s infinite ease-in-out;
+        z-index: 0;
+      }
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.2; }
-      50% { transform: scale(1.1); opacity: 0.3; }
-      100% { transform: scale(1); opacity: 0.2; }
-    }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.2;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.2;
+        }
+      }
 
-    .hero h1 {
-      font-size: 4.2rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #ff5733, #14b8a6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+      .hero h1 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, #111827, #22c55e);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
 
-    .typing {
-      color: #14b8a6;
-      font-weight: 500;
-      font-size: 1.9rem;
-    }
+      .typing {
+        color: #22c55e;
+        font-weight: 500;
+        font-size: 1.9rem;
+      }
 
-    .fade-content {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
-      max-width: 900px;
-      z-index: 1;
-    }
+      .fade-content {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
+        max-width: 900px;
+        z-index: 1;
+      }
 
-    .fade-content.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+      .fade-content.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    .portfolio-img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
-      margin-bottom: 20px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
+      .portfolio-img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
+        margin-bottom: 20px;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
 
-    .portfolio-img:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(20, 184, 166, 0.5);
-    }
+      .portfolio-img:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(34, 197, 94, 0.45);
+      }
 
-    /* Vertical Navbar */
-    .vertical-nav {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      z-index: 1000;
-    }
+      /* Vertical Navbar */
+      .vertical-nav {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        z-index: 1000;
+      }
 
-    .vertical-nav a {
-      color: #e5e7eb;
-      font-size: 1.4rem;
-      padding: 14px;
-      background: rgba(44, 44, 44, 0.9);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 87, 51, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-    }
+      .vertical-nav a {
+        color: #111827;
+        font-size: 1.4rem;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+      }
 
-    .vertical-nav a:hover {
-      color: #14b8a6;
-      transform: scale(1.15) translateX(-5px);
-      background: rgba(255, 87, 51, 0.2);
-      box-shadow: 0 6px 20px rgba(255, 87, 51, 0.6);
-    }
+      .vertical-nav a:hover {
+        color: #22c55e;
+        transform: scale(1.15) translateX(-5px);
+        background: rgba(34, 197, 94, 0.1);
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+      }
 
-    .vertical-nav a.active {
-      color: #14b8a6;
-      background: rgba(255, 87, 51, 0.3);
-      box-shadow: 0 6px 20px rgba(20, 184, 166, 0.5);
-    }
+      .vertical-nav a.active {
+        color: #22c55e;
+        background: rgba(34, 197, 94, 0.15);
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+      }
 
-    /* Contact Form */
-    .contact-form .form-control {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid #ff5733;
-      color: #e5e7eb;
-      border-radius: 12px;
-      transition: all 0.4s ease;
-    }
+      /* Contact Form */
+      .contact-form .form-control {
+        background: #ffffff;
+        border: 1px solid #d1d5db;
+        color: #111827;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+      }
 
-    .contact-form .form-control:focus {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: #14b8a6;
-      box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
-    }
+      .contact-form .form-control:focus {
+        background: #ffffff;
+        border-color: #22c55e;
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+      }
 
-    .contact-form .btn-primary {
-      background: linear-gradient(45deg, #ff5733, #14b8a6);
-      border: none;
-      border-radius: 12px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      font-weight: 500;
-    }
+      .contact-form .btn-primary {
+        background: linear-gradient(45deg, #111827, #22c55e);
+        border: none;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        font-weight: 500;
+        color: #fff;
+      }
 
-    .contact-form .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.7s ease, height 0.7s ease;
-    }
+      .contact-form .btn-primary:hover {
+        background: linear-gradient(45deg, #22c55e, #111827);
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(34, 197, 94, 0.6);
+      }
 
-    .contact-form .btn-primary:hover::before {
-      width: 350px;
-      height: 350px;
-    }
+      .form-message.success {
+        color: #22c55e;
+      }
+      .form-message.error {
+        color: #ef4444;
+      }
 
-    .contact-form .btn-primary:hover {
-      background: linear-gradient(45deg, #14b8a6, #ff5733);
-      transform: translateY(-4px);
-      box-shadow: 0 5px 15px rgba(20, 184, 166, 0.6);
-    }
+      /* Social Icons */
+      .social-icons a {
+        color: #111827;
+        margin: 0 18px;
+        font-size: 1.9rem;
+        transition: all 0.4s ease;
+      }
 
-    .form-message {
-      display: none;
-      margin-top: 12px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+      .social-icons a:hover {
+        color: #22c55e;
+        transform: translateY(-6px);
+      }
 
-    .form-message.success {
-      color: #14b8a6;
-    }
+      /* Skill Logos */
+      .skill-logos img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+      }
 
-    .form-message.error {
-      color: #ef4444;
-    }
+      .skill-logos img:hover {
+        transform: scale(1.2);
+      }
+      /* Portfolio Card Hover Effect */
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+      }
 
-    /* Social Icons */
-    .social-icons a {
-      color: #e5e7eb;
-      margin: 0 18px;
-      font-size: 1.9rem;
-      transition: all 0.4s ease;
-    }
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 15px;
+        display: block;
+        transition: transform 0.5s ease;
+      }
 
-    .social-icons a:hover {
-      color: #14b8a6;
-      transform: translateY(-6px);
-    }
+      .portfolio-item:hover img {
+        transform: scale(1.1);
+      }
 
-    /* Skill Logos */
-    .skill-logos {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
+      .portfolio-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(17, 24, 39, 0.8); /* dark overlay */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        text-align: center;
+        padding: 20px;
+      }
 
-    .skill-logos img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s ease;
-    }
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
 
-    .skill-logos img:hover {
-      transform: scale(1.2);
-    }
-  </style>
-</head>
-<body>
+      .portfolio-overlay h5 {
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
 
-<!-- Single Section (Hero + Dynamic Content) -->
-<section class="hero" id="hero">
-  <div id="dynamic-content" class="fade-content show">
-    <!-- Default Home -->
-    <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
-    <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
-    <a href="#" class="btn btn-outline-light mt-4 dynamic-link" data-target="portfolio">Explore My Work</a>
-  </div>
-</section>
+      .portfolio-overlay a {
+        background: #fff;
+        color: #22c55e;
+        padding: 8px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
 
-<!-- Vertical Navbar -->
-<div class="vertical-nav">
-  <a href="#" class="dynamic-link active" data-target="home" title="Home"><i class="fas fa-home"></i></a>
-  <a href="#" class="dynamic-link" data-target="about" title="About"><i class="fas fa-user"></i></a>
-  <a href="#" class="dynamic-link" data-target="portfolio" title="Portfolio"><i class="fas fa-briefcase"></i></a>
-  <a href="#" class="dynamic-link" data-target="contact" title="Contact"><i class="fas fa-envelope"></i></a>
-</div>
+      .portfolio-overlay a:hover {
+        background: #e7ebe8;
+      }
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  // Typing animation
-  let typed;
-  function startTyping() {
-    if (typed) typed.destroy();
-    typed = new Typed('.typing', {
-      strings: ["Web Developer", "Freelancer", "Creative Coder"],
-      typeSpeed: 80,
-      backSpeed: 50,
-      loop: true
-    });
+      /* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;        /* Remove fixed height */
+    min-height: 100vh;   /* Still covers full screen if content is small */
+    padding: 60px 20px;  /* Add spacing for breathing room */
   }
-  startTyping();
 
-  // Dynamic Content Data
-  const dynamicContent = document.getElementById("dynamic-content");
-  const links = document.querySelectorAll(".dynamic-link");
+  .hero h1 {
+    font-size: 2rem;     /* Scale down headings */
+  }
 
-  const sections = {
-    home: `
+  .typing {
+    font-size: 1.2rem;
+  }
+
+  .vertical-nav {
+    right: 10px;         /* Adjust nav for smaller screens */
+    gap: 12px;
+  }
+
+  .vertical-nav a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+}
+/* Responsive typography */
+@media (max-width: 768px) {
+  #dynamic-content h2 {
+    font-size: 1.6rem;   /* Smaller heading */
+    line-height: 1.3;
+  }
+
+  #dynamic-content p.lead {
+    font-size: 1rem;     /* Scale down lead text */
+    line-height: 1.6;    /* Better readability */
+  }
+
+  .skill-logos {
+    flex-wrap: wrap;     /* Allow logos to wrap */
+    gap: 12px;
+  }
+
+  .skill-logos img {
+    width: 32px; 
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  #dynamic-content h2 {
+    font-size: 1.4rem;
+  }
+
+  #dynamic-content p.lead {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Single Section (Hero + Dynamic Content) -->
+    <!-- Single Section (Hero + Dynamic Content) -->
+    <section class="hero" id="hero">
+      <div id="dynamic-content" class="fade-content show">
+        <!-- Default Home -->
+        <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
+        <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
+      </div>
+    </section>
+
+    <!-- Vertical Navbar -->
+    <div class="vertical-nav">
+      <a href="#" class="dynamic-link active" data-target="home" title="Home"
+        ><i class="fas fa-home"></i
+      ></a>
+      <a href="#" class="dynamic-link" data-target="about" title="About"
+        ><i class="fas fa-user"></i
+      ></a>
+      <a href="#" class="dynamic-link" data-target="portfolio" title="Portfolio"
+        ><i class="fas fa-briefcase"></i
+      ></a>
+      <a href="#" class="dynamic-link" data-target="contact" title="Contact"
+        ><i class="fas fa-envelope"></i
+      ></a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      // Typing animation
+      let typed;
+      function startTyping() {
+        if (typed) typed.destroy();
+        typed = new Typed(".typing", {
+          strings: ["Web Developer", "Freelancer", "Creative Coder"],
+          typeSpeed: 80,
+          backSpeed: 50,
+          loop: true,
+        });
+      }
+      startTyping();
+
+      // Dynamic Content Data
+      const dynamicContent = document.getElementById("dynamic-content");
+      const links = document.querySelectorAll(".dynamic-link");
+
+      const sections = {
+        home: `
       <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
       <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
       <a href="#" class="btn btn-outline-light mt-4 dynamic-link" data-target="portfolio">Explore My Work</a>
     `,
-    about: `
+        about: `
       <h2 class="fw-bold mb-3">About Me</h2>
       <p class="lead">I'm a passionate developer crafting immersive, responsive, and animated websites. My expertise spans <b>HTML, CSS, JavaScript, Bootstrap, WordPress, React, PHP, Laravel</b>, and more, delivering seamless user experiences.</p>
       <p class="lead mt-3">With a focus on creativity and performance, I transform ideas into digital realities.</p>
-      <div class="skill-logos">
+      <div class="skill-logos gap-3 mt-5 d-flex justify-content-center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
@@ -295,15 +415,59 @@
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" title="Laravel">
       </div>
     `,
-    portfolio: `
-      <h2 class="fw-bold mb-4">My Projects</h2>
-      <div class="row g-3">
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" class="portfolio-img" alt="Project 1"></div>
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800" class="portfolio-img" alt="Project 2"></div>
-        <div class="col-md-4"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" class="portfolio-img" alt="Project 3"></div>
+        portfolio: `
+  <h2 class="fw-bold mb-4">My Projects</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="https://api.screenshotmachine.com?key=045c33&url=https://www.eccovolta.com/&dimension=800x600" alt="Eccovolta">
+
+        <div class="portfolio-overlay">
+          <h5>Eccovolta </h5>
+          <a href="https://www.eccovolta.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+        </div>
       </div>
-    `,
-    contact: `
+    </div>
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="https://api.screenshotmachine.com?key=045c33&url=https://beatvalhalla.com/&dimension=800x600" alt="BeatValhalla">
+        <div class="portfolio-overlay">
+          <h5>Beat Valhalla</h5>
+          <a href="https://beatvalhalla.com" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="https://api.screenshotmachine.com?key=045c33&url=https://homeskule.com/&dimension=800x600" alt="Home Skule">
+        <div class="portfolio-overlay">
+          <h5>Home Skule</h5>
+          <a href="https://homeskule.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="https://api.screenshotmachine.com?key=045c33&url=https://langleyrecruitment.com/&dimension=800x600" alt="Langley">
+        <div class="portfolio-overlay">
+          <h5>Langley Recruitment</h5>
+          <a href="https://langleyrecruitment.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="https://api.screenshotmachine.com?key=045c33&url=http://iamjoplin.com/&dimension=800x600" alt="Joplin">
+        <div class="portfolio-overlay">
+          <h5>Joplin</h5>
+          <a href="http://iamjoplin.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+`,
+
+        contact: `
       <h2 class="fw-bold mb-3">Get in Touch</h2>
       <form class="contact-form mx-auto" style="max-width: 500px;" onsubmit="handleSubmit(event)">
         <div class="mb-3">
@@ -323,53 +487,55 @@
         <a href="https://github.com/devhassan26/" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://wa.me/+923473547440" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
-    `
-  };
+    `,
+      };
 
-  // Replace Content
-  function loadSection(target) {
-    dynamicContent.classList.remove("show");
-    links.forEach(link => link.classList.remove("active"));
-    const activeLink = Array.from(links).find(link => link.dataset.target === target);
-    if (activeLink) activeLink.classList.add("active");
-    setTimeout(() => {
-      dynamicContent.innerHTML = sections[target];
-      dynamicContent.classList.add("show");
-      if (target === "home") startTyping();
-    }, 400);
-  }
+      // Replace Content
+      function loadSection(target) {
+        dynamicContent.classList.remove("show");
+        links.forEach((link) => link.classList.remove("active"));
+        const activeLink = Array.from(links).find(
+          (link) => link.dataset.target === target
+        );
+        if (activeLink) activeLink.classList.add("active");
+        setTimeout(() => {
+          dynamicContent.innerHTML = sections[target];
+          dynamicContent.classList.add("show");
+          if (target === "home") startTyping();
+        }, 400);
+      }
 
-  // Handle Form Submission
-  function handleSubmit(event) {
-    event.preventDefault();
-    const formMessage = document.getElementById("form-message");
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+      // Handle Form Submission
+      function handleSubmit(event) {
+        event.preventDefault();
+        const formMessage = document.getElementById("form-message");
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
 
-    if (name && email && message) {
-      formMessage.classList.remove("error", "success");
-      formMessage.classList.add("success");
-      formMessage.textContent = "Contact on Whatsapp, please!";
-      formMessage.style.display = "block";
-      event.target.reset();
-      setTimeout(() => {
-        formMessage.style.display = "none";
-      }, 3000);
-    } else {
-      formMessage.classList.remove("error", "success");
-      formMessage.classList.add("error");
-      formMessage.textContent = "Please fill out all fields.";
-      formMessage.style.display = "block";
-    }
-  }
+        if (name && email && message) {
+          formMessage.classList.remove("error", "success");
+          formMessage.classList.add("success");
+          formMessage.textContent = "Contact on Whatsapp, please!";
+          formMessage.style.display = "block";
+          event.target.reset();
+          setTimeout(() => {
+            formMessage.style.display = "none";
+          }, 3000);
+        } else {
+          formMessage.classList.remove("error", "success");
+          formMessage.classList.add("error");
+          formMessage.textContent = "Please fill out all fields.";
+          formMessage.style.display = "block";
+        }
+      }
 
-  links.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      loadSection(link.dataset.target);
-    });
-  });
-</script>
-</body>
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          loadSection(link.dataset.target);
+        });
+      });
+    </script>
+  </body>
 </html>
