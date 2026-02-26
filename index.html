@@ -1,573 +1,610 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shahzad Portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drake - OnePage Portfolio HTML5 Template</title>
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- FontAwesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        scroll-behavior: smooth;
-        background: #ffffff;
-        color: #111827;
-        overflow-x: hidden;
-      }
-
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        background: #f9fafb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        padding: 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle,
-          rgba(34, 197, 94, 0.08) 0%,
-          transparent 70%
-        );
-        animation: pulse 10s infinite ease-in-out;
-        z-index: 0;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-          opacity: 0.2;
-        }
-        50% {
-          transform: scale(1.1);
-          opacity: 0.3;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 0.2;
-        }
-      }
-
-      .hero h1 {
-        font-size: 4.2rem;
-        font-weight: 700;
-        background: linear-gradient(45deg, #111827, #22c55e);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .typing {
-        color: #22c55e;
-        font-weight: 500;
-        font-size: 1.9rem;
-      }
-
-      .fade-content {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
-        max-width: 900px;
-        z-index: 1;
-      }
-
-      .fade-content.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .portfolio-img {
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
-        margin-bottom: 20px;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-      }
-
-      .portfolio-img:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(34, 197, 94, 0.45);
-      }
-
-      /* Vertical Navbar */
-      .vertical-nav {
-        position: fixed;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-        z-index: 1000;
-      }
-
-      .vertical-nav a {
-        color: #111827;
-        font-size: 1.4rem;
-        padding: 14px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-      }
-
-      .vertical-nav a:hover {
-        color: #22c55e;
-        transform: scale(1.15) translateX(-5px);
-        background: rgba(34, 197, 94, 0.1);
-        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
-      }
-
-      .vertical-nav a.active {
-        color: #22c55e;
-        background: rgba(34, 197, 94, 0.15);
-        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
-      }
-
-      /* Contact Form */
-      .contact-form .form-control {
-        background: #ffffff;
-        border: 1px solid #d1d5db;
-        color: #111827;
-        border-radius: 12px;
-        transition: all 0.4s ease;
-      }
-
-      .contact-form .form-control:focus {
-        background: #ffffff;
-        border-color: #22c55e;
-        box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
-      }
-
-      .contact-form .btn-primary {
-        background: linear-gradient(45deg, #111827, #22c55e);
-        border: none;
-        border-radius: 12px;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        font-weight: 500;
-        color: #fff;
-      }
-
-      .contact-form .btn-primary:hover {
-        background: linear-gradient(45deg, #22c55e, #111827);
-        transform: translateY(-4px);
-        box-shadow: 0 5px 15px rgba(34, 197, 94, 0.6);
-      }
-
-      .form-message.success {
-        color: #22c55e;
-      }
-      .form-message.error {
-        color: #ef4444;
-      }
-
-      /* Social Icons */
-      .social-icons a {
-        color: #111827;
-        margin: 0 18px;
-        font-size: 1.9rem;
-        transition: all 0.4s ease;
-      }
-
-      .social-icons a:hover {
-        color: #22c55e;
-        transform: translateY(-6px);
-      }
-
-      /* Skill Logos */
-      .skill-logos img {
-        width: 40px;
-        height: 40px;
-        transition: transform 0.3s ease;
-      }
-
-      .skill-logos img:hover {
-        transform: scale(1.2);
-      }
-      /* Portfolio Card Hover Effect */
-      .portfolio-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-      }
-
-      .portfolio-item img {
-        width: 100%;
-        border-radius: 15px;
-        display: block;
-        transition: transform 0.5s ease;
-      }
-
-      .portfolio-item:hover img {
-        transform: scale(1.1);
-      }
-
-      .portfolio-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(17, 24, 39, 0.8); /* dark overlay */
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .portfolio-item:hover .portfolio-overlay {
-        opacity: 1;
-      }
-
-      .portfolio-overlay h5 {
-        margin-bottom: 12px;
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      .portfolio-overlay a {
-        background: #fff;
-        color: #22c55e;
-        padding: 8px 16px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background 0.3s ease;
-      }
-
-      .portfolio-overlay a:hover {
-        background: #e7ebe8;
-      }
-      #dynamic-content{
-        overflow-y: auto;
-        overflow-x: inherit;
-      }
-      /* Responsive Fix for Mobile */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;        /* Remove fixed height */
-    min-height: 100vh;   /* Still covers full screen if content is small */
-    padding: 60px 20px;  /* Add spacing for breathing room */
-  }
-
-  .hero h1 {
-    font-size: 2rem;     /* Scale down headings */
-  }
-
-  .typing {
-    font-size: 1.2rem;
-  }
-
-  .vertical-nav {
-    right: 10px;         /* Adjust nav for smaller screens */
-    gap: 12px;
-  }
-
-  .vertical-nav a {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-    padding: 10px;
-  }
-}
-/* Responsive typography */
-@media (max-width: 768px) {
-  #dynamic-content h2 {
-    font-size: 1.6rem;   /* Smaller heading */
-    line-height: 1.3;
-  }
-
-  #dynamic-content p.lead {
-    font-size: 1rem;     /* Scale down lead text */
-    line-height: 1.6;    /* Better readability */
-  }
-
-  .skill-logos {
-    flex-wrap: wrap;     /* Allow logos to wrap */
-    gap: 12px;
-  }
-
-  .skill-logos img {
-    width: 32px; 
-    height: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  #dynamic-content h2 {
-    font-size: 1.4rem;
-  }
-
-  #dynamic-content p.lead {
-    font-size: 0.95rem;
-  }
-}
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 
 
 
-    </style>
-  </head>
-  <body>
-    <!-- Single Section (Hero + Dynamic Content) -->
-    <!-- Single Section (Hero + Dynamic Content) -->
-    <section class="hero" id="hero">
-      <div id="dynamic-content" class="fade-content show">
-        <!-- Default Home -->
-        <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
-        <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
-      </div>
-    </section>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Vertical Navbar -->
-    <div class="vertical-nav">
-      <a href="#" class="dynamic-link active" data-target="home" title="Home"
-        ><i class="fas fa-home"></i
-      ></a>
-      <a href="#" class="dynamic-link" data-target="about" title="About"
-        ><i class="fas fa-user"></i
-      ></a>
-      <a href="#" class="dynamic-link" data-target="portfolio" title="Portfolio"
-        ><i class="fas fa-briefcase"></i
-      ></a>
-      <a href="#" class="dynamic-link" data-target="contact" title="Contact"
-        ><i class="fas fa-envelope"></i
-      ></a>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/smooth-scrollbar.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+</head>
+<body>
+
+
+    <div class="page-loader">
+        <div class="bounceball"></div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      // Typing animation
-      let typed;
-      function startTyping() {
-        if (typed) typed.destroy();
-        typed = new Typed(".typing", {
-          strings: ["Web Developer", "Digital Creator", "Creative Coder"],
-          typeSpeed: 80,
-          backSpeed: 50,
-          loop: true,
-        });
-      }
-      startTyping();
+    <span class="icon-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
 
-      // Dynamic Content Data
-      const dynamicContent = document.getElementById("dynamic-content");
-      const links = document.querySelectorAll(".dynamic-link");
+    <div class="responsive-sidebar-menu">
+        <div class="overlay"></div>
+        <div class="sidebar-menu-inner">
+            <div class="menu-wrap">
+                <p>Menu</p>
+                <ul class="menu scroll-nav-responsive d-flex">
+                    <li>
+                        <a class="scroll-to" href="#home">
+                            <i class="las la-home"></i> <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="scroll-to" href="#about">
+                            <i class="lar la-user"></i> <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="scroll-to" href="#resume">
+                            <i class="las la-briefcase"></i> <span>Resume</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="scroll-to" href="#services">
+                            <i class="las la-stream"></i> <span>Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="scroll-to" href="#skills">
+                            <i class="las la-shapes"></i> <span>Skills</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="scroll-to" href="#portfolio">
+                            <i class="las la-grip-vertical"></i> <span>Portfolios</span>
+                        </a>
+                    </li>
+                   
+                    <li>
+                        <a class="scroll-to" href="#contact">
+                            <i class="las la-envelope"></i> <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      const sections = {
-        home: `
-      <h1>Hi, I'm <span class="fw-bold">Shahzad Hassan</span></h1>
-      <p class="mt-3 fs-4">I am a <span class="typing"></span></p>
-      <a href="#" class="btn btn-outline-light mt-4 dynamic-link" data-target="portfolio">Explore My Work</a>
-    `,
-        about: `
-      <h2 class="fw-bold mb-3">About Me</h2>
-      <p class="lead">I'm a passionate developer crafting immersive, responsive, and animated websites. My expertise spans <b>HTML, CSS, JavaScript, Bootstrap, Tailwind, WordPress, PHP, Laravel, Rest APIs</b>, and more, delivering seamless user experiences.</p>
-      <p class="lead mt-3">With a focus on creativity and performance, I transform ideas into digital realities.</p>
-      <div class="skill-logos gap-3 mt-5 d-flex justify-content-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" title="WordPress">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" title="PHP">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" title="Laravel">
-      </div>
-    `,
-        portfolio: `
-  <h2 class="fw-bold mb-4">My Projects</h2>
-  <div class="row g-3">
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://stavbysimigarant.cz/&dimension=800x600" alt="Stavby SimiGarant">
 
-        <div class="portfolio-overlay">
-          <h5>Stavby SimiGarant </h5>
-          <a href="https://stavbysimigarant.cz/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
+           <!-- <div class="sidebar-social">
+                <p>Social</p>
+                <ul class="social-links d-flex align-items-center">
+                    <li>
+                        <a href=""><i class="lab la-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="lab la-dribbble"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="lab la-instagram"></i></a>
+                    </li>
+                </ul>
+            </div> -->
         </div>
-      </div>
     </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://www.paidx.co.uk/&dimension=800x600" alt="Paidx">
 
-        <div class="portfolio-overlay">
-          <h5>Paidx </h5>
-          <a href="https://www.paidx.co.uk/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://www.eccovolta.com/&dimension=800x600" alt="Eccovolta">
+    <ul class="menu scroll-nav d-flex">
+        <li>
+            <a class="scroll-to" href="#home">
+                <span>Home</span> <i class="las la-home"></i>
+            </a>
+        </li>
+        <li>
+            <a class="scroll-to" href="#about">
+                <span>About</span> <i class="lar la-user"></i>
+            </a>
+        </li>
+        <li>
+            <a class="scroll-to" href="#resume">
+                <span>Resume</span> <i class="las la-briefcase"></i>
+            </a>
+        </li>
+        <li>
+            <a class="scroll-to" href="#services">
+                <span>Services</span> <i class="las la-stream"></i>
+            </a>
+        </li>
+        <li>
+            <a class="scroll-to" href="#skills">
+                <span>Skills</span> <i class="las la-shapes"></i>
+            </a>
+        </li>
+        <li>
+            <a class="scroll-to" href="#portfolio">
+                <span>Portfolios</span> <i class="las la-grip-vertical"></i>
+            </a>
+        </li>
+    
+        <li>
+            <a class="scroll-to" href="#contact">
+                <span>Contact</span> <i class="las la-envelope"></i>
+            </a>
+        </li>
+    </ul>
 
-        <div class="portfolio-overlay">
-          <h5>Eccovolta </h5>
-          <a href="https://www.eccovolta.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://beatvalhalla.com/&dimension=800x600" alt="BeatValhalla">
-        <div class="portfolio-overlay">
-          <h5>Beat Valhalla</h5>
-          <a href="https://beatvalhalla.com" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://homeskule.com/&dimension=800x600" alt="Home Skule">
-        <div class="portfolio-overlay">
-          <h5>Home Skule</h5>
-          <a href="https://homeskule.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://langleyrecruitment.com/&dimension=800x600" alt="Langley">
-        <div class="portfolio-overlay">
-          <h5>Langley Recruitment</h5>
-          <a href="https://langleyrecruitment.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=http://iamjoplin.com/&dimension=800x600" alt="Joplin">
-        <div class="portfolio-overlay">
-          <h5>Joplin</h5>
-          <a href="http://iamjoplin.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="portfolio-item">
-        <img src="https://api.screenshotmachine.com?key=045c33&url=https://heart-holz.com/&dimension=800x600" alt="Heart Holz">
-        <div class="portfolio-overlay">
-          <h5>Heart Holz</h5>
-          <a href="https://heart-holz.com/" target="_blank">Visit <i class="bi bi-box-arrow-up-right ms-1"></i> </a>
-        </div>
-      </div>
-    </div>
-  </div>
-`,
+    <main class="drake-main">
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
 
-        contact: `
-      <h2 class="fw-bold mb-3">Get in Touch</h2>
-      <form class="contact-form mx-auto" style="max-width: 500px;" onsubmit="handleSubmit(event)">
-        <div class="mb-3">
-          <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                <section class="hero-section page-section scroll-to-page" id="home">
+
+                    <div class="custom-container">
+                        <div class="hero-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-home"></i> Introduce
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Hi, I'm <span>Shahzad Hassan</span> <br> Full Stack Developer</h1>
+                            </div>
+                            <p class="scroll-animation" data-animation="fade_from_bottom">I design and code beautifully simple things and i love what i do. Just simple like that!</p>
+                             <div class="d-flex flex-md-row flex-column social-and-btn">
+                                <div>
+                                <ul class="social-profile d-flex align-items-center flex-wrap">
+                                <li>
+                                    <a href=""><i class="lab la-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="lab la-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="lab la-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="lab la-github"></i></a>
+                                </li>
+                            </ul>
+                            <a href="mailto:devhassan26@gmail.com" class="theme-btn">
+                                <i class="las la-envelope"></i> Hire Me!
+                            </a>
+                             </div>
+                            <div class="facts d-flex">
+                                <div class="left scroll-animation" data-animation="fade_from_left">
+                                    <h1>3+</h1>
+                                    <p>Years of <br>Experience</p>
+                                </div>
+                                <div class="right scroll-animation" data-animation="fade_from_right">
+                                    <h1>45+</h1>
+                                    <p>projects completed on <br>worldwide</p>
+                                </div>
+                            </div>
+                             <a href="#portfolio" 
+                                class="go-to-project-btn scroll-to scroll-animation" 
+                                data-animation="rotate_up">
+                                <img src="./assets/images/round-text.png" alt="Rounded Text">
+                                <i class="las la-arrow-down"></i>
+                            </a>
+                             </div>
+                            
+                           
+        
+                            
+                        </div>
+                    </div>
+                </section>
+        
+                <section class="about-area page-section scroll-to-page" id="about">
+                    <div class="custom-container">
+                        <div class="about-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="lar la-user"></i> About
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Every great product begin with<br>
+                                    an even <span>better story</span></h1>
+                            </div>
+                            <p class="scroll-animation" data-animation="fade_from_bottom">Since beginning my journey as a software engineer, I’ve been building scalable applications, crafting custom Laravel solutions, and turning complex requirements into simple, efficient systems.
+                                I’m quietly confident, naturally curious, and passionate about writing clean, structured code. I believe in continuous improvement — solving one real problem at a time while building systems that are practical, optimized, and future-ready.</p>
+                            <a href="./assets/files/Shahzad Resume.pdf" class="theme-btn">
+                                <i class="las la-file-download"></i> Download Resume!
+                            </a>
+                        </div>
+                    </div>
+                </section>
+        
+        
+                <section class="resume-area page-section scroll-to-page" id="resume">
+                    <div class="custom-container">
+                        <div class="resume-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-briefcase"></i> Resume
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Education & <span>Experience</span></h1>
+                            </div>
+        
+                            <div class="resume-timeline">
+                                <div class="item scroll-animation" data-animation="fade_from_right">
+                                    <span class="date">2025 - Present</span>
+                                    <h2>Laravel Developer</h2>
+                                    <p>Software Pattern</p>
+                                </div>
+                                <div class="item scroll-animation" data-animation="fade_from_right">
+                                    <span class="date">2023 - June 2025</span>
+                                    <h2>PHP / Laravel Developer</h2>
+                                    <p>Progressive Marketing Company</p>
+                                    <h2>Junior Software Engineer</h2>
+                                    <p>Progressive Marketing Company</p>
+                                    <h2>Website Developer</h2>
+                                    <p>Freelance</p>
+                                </div>
+                                <div class="item scroll-animation" data-animation="fade_from_right">
+                                    <span class="date">2018 - 2022</span>
+                                    <h2>Bachelor Degree of Information Technology</h2>
+                                    <p>Punjab University</p>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </section>
+        
+        
+                <section class="services-area page-section scroll-to-page" id="services">
+                    <div class="custom-container">
+                        <div class="services-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-stream"></i> Services
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">My <span>Specializations</span></h1>
+                            </div>
+        
+                            <div class="services-items">
+                                <div class="service-item scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-bezier-curve"></i>
+                                    <h2>Development</h2>
+                                    <p>I build responsive, scalable, and secure web applications.</p>
+                                    <span class="projects">26 Projects</span>
+                                </div>
+                                <div class="service-item scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-code"></i>
+                                    <h2>Optimization</h2>
+                                    <p>Improve performance, speed, database efficiency, and overall system scalability.</p>
+                                    <span class="projects">12 Projects</span>
+                                </div>
+                                <div class="service-item scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-bezier-curve"></i>
+                                    <h2>API Integration</h2>
+                                    <p>Integrate third-party services, payment gateways, and custom REST APIs.</p>
+                                    <span class="projects">7 Projects</span>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </section>
+        
+        
+                <section class="skills-area page-section scroll-to-page" id="skills">
+                    <div class="custom-container">
+                        <div class="skills-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-shapes"></i> my skills
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">My <span>Advantages</span></h1>
+                            </div>
+        
+                            <div class="row skills text-center">
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"  alt="Html" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">92%</h1>
+                                        </div>
+                                        <p class="name">Html</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="Css" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">87%</h1>
+                                        </div>
+                                        <p class="name">Css</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">83%</h1>
+                                        </div>
+                                        <p class="name">JavaScript</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">90%</h1>
+                                        </div>
+                                        <p class="name">Bootstrap</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_left">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">86%</h1>
+                                        </div>
+                                        <p class="name">Tailwind CSS</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_right">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="./assets/images/wordpress.png" alt="WordPress" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">89%</h1>
+                                        </div>
+                                        <p class="name">WordPress</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_top">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">91%</h1>
+                                        </div>
+                                        <p class="name">PHP</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">85%</h1>
+                                        </div>
+                                        <p class="name">Laravel</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="skill">
+                                        <div class="skill-inner">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySql" style="width: 60px; height: 60px;">
+                                            <h1 class="percent">93%</h1>
+                                        </div>
+                                        <p class="name">MySql</p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </section>
+        
+        
+                <section class="portfolio-area page-section scroll-to-page" id="portfolio">
+                    <div class="custom-container">
+                        <div class="portfolio-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-grip-vertical"></i> portfolio
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Featured <span>Projects</span></h1>
+                            </div>
+        
+                            <div class="row portfolio-items">
+                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="portfolio-item portfolio-full">
+                                        <div class="portfolio-item-inner">
+                                            <a href="./assets/images/portfolio1.png" data-lightbox="example-1">
+                                                <img src="./assets/images/portfolio1.png" alt="Portfolio">
+                                            </a>
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="">Figma</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">WordPress</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="">Bureau - Architecture Studio Website</a></h2>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
+                                    <div class="portfolio-item portfolio-half">
+                                        <div class="portfolio-item-inner">
+                                            <a href="./assets/images/portfolio2.png" data-lightbox="example-1">
+                                                <img src="./assets/images/portfolio2.png" alt="Portfolio">
+                                            </a>
+
+                                            <img src="./assets/images/portfolio2.png" alt="Portfolio">
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="">Bootstrap</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Laravel/PHP</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="">Moonex WordPress Theme</a></h2>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
+                                    <div class="portfolio-item portfolio-half">
+                                        <div class="portfolio-item-inner">
+                                            <a href="./assets/images/portfolio3.png" data-lightbox="example-1">
+                                                <img src="./assets/images/portfolio3.png" alt="Portfolio">
+                                            </a>
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="">Html/Css</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">WordPress</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">PHP</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="">Taskly Dashboard</a></h2>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="portfolio-item portfolio-half">
+                                        <div class="portfolio-item-inner">
+                                            <a href="./assets/images/portfolio4.png" data-lightbox="example-1">
+                                                <img src="./assets/images/portfolio4.png" alt="portfolio">
+                                            </a>
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="">Bootstrap</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">JavaScript</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">PHP</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="">Hinterland - Real Estate Site Redesign</a></h2>
+                                    </div>
+                                </div>
+        
+                                <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
+                                    <div class="portfolio-item portfolio-half">
+                                        <div class="portfolio-item-inner">
+                                            <a href="./assets/images/portfolio5.png" data-lightbox="example-1">
+                                                <img src="./assets/images/portfolio5.png" alt="portfolio">
+                                            </a>
+        
+                                            <ul class="portfolio-categories">
+                                                <li>
+                                                    <a href="">Framer</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2><a href="">Lewis Portfolio Framer Template</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </section>
+        
+                <section class="contact-area page-section scroll-content" id="contact">
+                    <div class="custom-container">
+                        <div class="contact-content content-width">
+                            <div class="section-header">
+                                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                                    <i class="las la-dollar-sign"></i> contact
+                                </h4>
+                                <h1 class="scroll-animation" data-animation="fade_from_bottom">Let's Work <span>Together!</span></h1>
+                            </div>
+                            <h3 class="scroll-animation" data-animation="fade_from_bottom">
+                            devhassan26@gmail.com <br>
+                            Whatsapp: 03473547440
+                            </h3>
+                            <p id="required-msg">* Marked fields are required to fill.</p>
+
+                            <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST" action="#">
+                                <div class="alert alert-success messenger-box-contact__msg" style="display: none" role="alert">
+                                    Your message was sent successfully.
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <label for="full-name">full Name <sup>*</sup></label>
+                                            <input type="text" name="full-name" id="full-name" placeholder="Your Full Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <label for="email">Email <sup>*</sup></label>
+                                            <input type="email" name="email" id="email" placeholder="Your email adress">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <label for="phone-number">phone <span>(optional)</span></label>
+                                            <input type="text" name="phone-number" id="phone-number" placeholder="Your number phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <label for="budget">your budget <span>(optional)</span></label>
+                                            <input type="number" name="budget" id="budget" placeholder="A range budget for your project">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <label for="message">message</label>
+                                            <textarea name="message" id="message" placeholder="Wrire your message here ..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-group upload-attachment">
+                                            <div>
+                                                <label for="upload-attachment">
+                                                    <i class="las la-cloud-upload-alt"></i> add an attachment
+                                                    <input type="file" name="file" id="upload-attachment">
+                                                </label>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-group submit-btn-wrap">
+                                            <button class="theme-btn" name="submit" type="submit" id="submit-form" disabled>send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Send Message</button>
-        <div id="form-message" class="form-message"></div>
-      </form>
-      <div class="social-icons mt-4">
-        <a href="https://www.linkedin.com/in/shahzad-h-523584261" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/devhassan26/" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://wa.me/+923473547440" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    `,
-      };
+    </main>
+    
 
-      // Replace Content
-      function loadSection(target) {
-        dynamicContent.classList.remove("show");
-        links.forEach((link) => link.classList.remove("active"));
-        const activeLink = Array.from(links).find(
-          (link) => link.dataset.target === target
-        );
-        if (activeLink) activeLink.classList.add("active");
-        setTimeout(() => {
-          dynamicContent.innerHTML = sections[target];
-          dynamicContent.classList.add("show");
-          if (target === "home") startTyping();
-        }, 400);
-      }
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/owl.carousel.js"></script>
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/lightbox.min.js"></script>
+    
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/ajax-form.js"></script>
+    <script src="./assets/js/color.js"></script>
 
-      // Handle Form Submission
-      function handleSubmit(event) {
-        event.preventDefault();
-        const formMessage = document.getElementById("form-message");
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        if (name && email && message) {
-          formMessage.classList.remove("error", "success");
-          formMessage.classList.add("success");
-          formMessage.textContent = "Contact on Whatsapp, please!";
-          formMessage.style.display = "block";
-          event.target.reset();
-          setTimeout(() => {
-            formMessage.style.display = "none";
-          }, 3000);
-        } else {
-          formMessage.classList.remove("error", "success");
-          formMessage.classList.add("error");
-          formMessage.textContent = "Please fill out all fields.";
-          formMessage.style.display = "block";
-        }
-      }
-
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          loadSection(link.dataset.target);
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>
