@@ -686,6 +686,12 @@ ul {
     height: 100%;
     object-fit: cover;
     object-position: top center;
+    filter: grayscale(100%) contrast(1.15) brightness(1.05);
+    transition: filter .5s ease;
+}
+
+.photo-frame:hover img {
+    filter: grayscale(0%) contrast(1.05) brightness(1.0);
 }
 
 /* Tech badges floating around photo */
@@ -754,6 +760,21 @@ ul {
 
 .about-img-wrap {
     position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.about-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(40, 233, 140, 0.10) 0%, transparent 60%);
+    pointer-events: none;
+    border-radius: var(--radius-lg);
+}
+
+.about-img-wrap:hover img {
+    filter: grayscale(0%) contrast(1.05) brightness(1.0);
 }
 
 .about-img-wrap img {
@@ -761,6 +782,8 @@ ul {
     border-radius: var(--radius-lg);
     aspect-ratio: 3 / 4;
     object-fit: cover;
+    filter: grayscale(100%) contrast(1.15) brightness(1.05);
+    transition: filter .5s ease;
     object-position: top center;
     border: 1px solid var(--border);
 }
