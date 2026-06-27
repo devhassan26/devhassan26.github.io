@@ -266,7 +266,7 @@ ul {
    =================================================== */
 .dot-nav {
     position: fixed;
-    right: 36px;
+    right: 30px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
@@ -276,24 +276,27 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    background: rgba(13, 18, 32, 0.8);
-    border: 1px solid var(--border);
+    gap: 16px;
+    background: rgba(13, 18, 32, 0.85);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 30px;
-    padding: 18px 12px;
+    padding: 16px 10px;
     backdrop-filter: blur(12px);
     position: static;
     transform: none;
     top: auto;
     right: auto;
+    width: auto;
+    text-align: center;
 }
 
 .dot-nav .menu li a {
     display: flex;
     align-items: center;
-    gap: 0;
+    justify-content: center;
     position: relative;
-    width: auto;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
@@ -301,8 +304,8 @@ ul {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--text-muted);
-    border: 1.5px solid var(--text-muted);
+    background: #7a8499;
+    border: 1.5px solid #7a8499;
     display: block;
     transition: .25s;
     flex-shrink: 0;
@@ -310,34 +313,34 @@ ul {
 
 .dot-nav .menu li a .dot-label {
     position: absolute;
-    right: calc(100% + 12px);
+    right: calc(100% + 14px);
     top: 50%;
     transform: translateY(-50%);
     background: rgba(13, 18, 32, 0.95);
-    color: var(--text);
+    color: #e8edf5;
     font-size: 12px;
-    padding: 4px 10px;
+    font-weight: 500;
+    padding: 5px 10px;
     border-radius: 6px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.08);
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transition: .2s;
+    transition: opacity .2s, visibility .2s;
     pointer-events: none;
 }
 
-.dot-nav .menu li a:hover .dot-label,
-.dot-nav .menu li a.active .dot-label {
+.dot-nav .menu li a:hover .dot-label {
     opacity: 1;
     visibility: visible;
 }
 
 .dot-nav .menu li a:hover .dot,
 .dot-nav .menu li a.active .dot {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: #28e98c;
+    border-color: #28e98c;
     transform: scale(1.5);
-    box-shadow: 0 0 8px var(--accent-glow);
+    box-shadow: 0 0 8px rgba(40, 233, 140, 0.4);
 }
 
 /* ===================================================
@@ -434,6 +437,13 @@ ul {
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+/* Hero row full height */
+.hero-row {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 /* Background */

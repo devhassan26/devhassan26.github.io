@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-uro-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahzad Hassan — Full Stack Developer</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
@@ -15,8 +15,8 @@
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/lightbox.min.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/style.css?v=3">
+    <link rel="stylesheet" href="./assets/css/responsive.css?v=3">
 </head>
 <body>
 
@@ -29,11 +29,11 @@
     </div>
 
     <!-- Mobile Hamburger -->
-    <button class="icon-menu" aria-label="Open menu">
+    <span class="icon-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-    </button>
+    </span>
 
     <!-- Mobile Sidebar -->
     <div class="responsive-sidebar-menu">
@@ -79,78 +79,81 @@
                 <div class="bg-orb orb-blue"></div>
                 <div class="bg-grid"></div>
             </div>
-            <div class="hero-inner">
-                <div class="hero-text-col">
-                    <p class="hero-greeting scroll-animation" data-animation="fade_from_bottom">
-                        <i class="las la-hand-paper"></i> Hello World!
-                    </p>
-                    <h1 class="hero-name scroll-animation" data-animation="fade_from_bottom">
-                        I'm <br><span class="name-highlight">Shahzad<br>Hassan</span>
-                    </h1>
-                    <div class="hero-role-wrap scroll-animation" data-animation="fade_from_bottom">
-                        <span class="role-static">A </span>
-                        <span id="typed-role" class="role-animated">Full Stack Developer</span>
+            <div class="custom-container">
+                <div class="row align-items-center g-5 hero-row">
+                    <!-- Text Column -->
+                    <div class="col-lg-7 order-2 order-lg-1">
+                        <p class="hero-greeting scroll-animation" data-animation="fade_from_bottom">
+                            <i class="las la-hand-paper"></i> Hello World!
+                        </p>
+                        <h1 class="hero-name scroll-animation" data-animation="fade_from_bottom">
+                            I'm <br><span class="name-highlight">Shahzad<br>Hassan</span>
+                        </h1>
+                        <p class="hero-role-wrap scroll-animation" data-animation="fade_from_bottom">
+                            <span class="role-static">A </span><span id="typed-role" class="role-animated">Full Stack Developer</span>
+                        </p>
+                        <p class="hero-bio scroll-animation" data-animation="fade_from_bottom">
+                            I build scalable, high-performance web apps with clean architecture
+                            and elegant code. Turning complex requirements into simple, efficient solutions.
+                        </p>
+                        <div class="hero-cta scroll-animation" data-animation="fade_from_bottom">
+                            <a href="mailto:devhassan26@gmail.com" class="btn-hire">
+                                <i class="las la-paper-plane"></i> Hire Me
+                            </a>
+                            <a href="./assets/files/Shahzad Resume.pdf" class="btn-outline" download>
+                                <i class="las la-file-download"></i> Resume
+                            </a>
+                        </div>
+                        <div class="hero-stats scroll-animation" data-animation="fade_from_bottom">
+                            <div class="stat-item">
+                                <h2 class="stat-num">3<span>+</span></h2>
+                                <p class="stat-desc">Years<br>Experience</p>
+                            </div>
+                            <div class="stat-sep"></div>
+                            <div class="stat-item">
+                                <h2 class="stat-num">45<span>+</span></h2>
+                                <p class="stat-desc">Projects<br>Completed</p>
+                            </div>
+                            <div class="stat-sep"></div>
+                            <div class="stat-item">
+                                <h2 class="stat-num">100<span>%</span></h2>
+                                <p class="stat-desc">Client<br>Satisfaction</p>
+                            </div>
+                        </div>
+                        <div class="hero-social scroll-animation" data-animation="fade_from_bottom">
+                            <a href="https://github.com/devhassan26" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <i class="lab la-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/devhassan26" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <i class="lab la-linkedin-in"></i>
+                            </a>
+                            <a href="https://wa.me/923473547440" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                <i class="lab la-whatsapp"></i>
+                            </a>
+                            <a href="mailto:devhassan26@gmail.com" class="social-icon">
+                                <i class="las la-envelope"></i>
+                            </a>
+                        </div>
                     </div>
-                    <p class="hero-bio scroll-animation" data-animation="fade_from_bottom">
-                        I build scalable, high-performance web apps with clean architecture
-                        and elegant code. Turning complex requirements into simple, efficient solutions.
-                    </p>
-                    <div class="hero-cta scroll-animation" data-animation="fade_from_bottom">
-                        <a href="mailto:devhassan26@gmail.com" class="btn-hire">
-                            <i class="las la-paper-plane"></i> Hire Me
-                        </a>
-                        <a href="./assets/files/Shahzad Resume.pdf" class="btn-outline" download>
-                            <i class="las la-file-download"></i> Resume
-                        </a>
-                    </div>
-                    <div class="hero-stats scroll-animation" data-animation="fade_from_bottom">
-                        <div class="stat-item">
-                            <h2 class="stat-num">3<span>+</span></h2>
-                            <p class="stat-desc">Years<br>Experience</p>
-                        </div>
-                        <div class="stat-sep"></div>
-                        <div class="stat-item">
-                            <h2 class="stat-num">45<span>+</span></h2>
-                            <p class="stat-desc">Projects<br>Completed</p>
-                        </div>
-                        <div class="stat-sep"></div>
-                        <div class="stat-item">
-                            <h2 class="stat-num">100<span>%</span></h2>
-                            <p class="stat-desc">Client<br>Satisfaction</p>
-                        </div>
-                    </div>
-                    <div class="hero-social scroll-animation" data-animation="fade_from_bottom">
-                        <a href="https://github.com/devhassan26" target="_blank" rel="noopener noreferrer" class="social-icon">
-                            <i class="lab la-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/devhassan26" target="_blank" rel="noopener noreferrer" class="social-icon">
-                            <i class="lab la-linkedin-in"></i>
-                        </a>
-                        <a href="https://wa.me/923473547440" target="_blank" rel="noopener noreferrer" class="social-icon">
-                            <i class="lab la-whatsapp"></i>
-                        </a>
-                        <a href="mailto:devhassan26@gmail.com" class="social-icon">
-                            <i class="las la-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-photo-col scroll-animation" data-animation="fade_from_right">
-                    <div class="photo-container">
-                        <div class="photo-glow"></div>
-                        <div class="photo-frame">
-                            <img src="./assets/images/me.jpg" alt="Shahzad Hassan">
-                        </div>
-                        <div class="tech-badge badge-tr">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
-                            <span>Laravel</span>
-                        </div>
-                        <div class="tech-badge badge-bl">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                            <span>PHP</span>
-                        </div>
-                        <div class="tech-badge badge-br">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                            <span>MySQL</span>
+                    <!-- Photo Column -->
+                    <div class="col-lg-5 order-1 order-lg-2">
+                        <div class="photo-container scroll-animation" data-animation="fade_from_right">
+                            <div class="photo-glow"></div>
+                            <div class="photo-frame">
+                                <img src="./assets/images/me.jpg" alt="Shahzad Hassan">
+                            </div>
+                            <div class="tech-badge badge-tr">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
+                                <span>Laravel</span>
+                            </div>
+                            <div class="tech-badge badge-bl">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                                <span>PHP</span>
+                            </div>
+                            <div class="tech-badge badge-br">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                <span>MySQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -164,20 +167,20 @@
                     <h4 class="subtitle"><i class="lar la-user"></i> About Me</h4>
                     <h2 class="section-title">Every great product begins with<br>an even <span>better story</span></h2>
                 </div>
-                <div class="about-grid">
-                    <div class="about-img-side scroll-animation" data-animation="fade_from_left">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5 scroll-animation" data-animation="fade_from_left">
                         <div class="about-img-wrap">
-                            <img src="./assets/images/me.jpg" alt="Shahzad Hassan">
+                            <img src="./assets/images/me.jpg" alt="Shahzad Hassan" class="about-img">
                             <div class="about-exp-badge">
                                 <span class="exp-num">3+</span>
                                 <span class="exp-text">Years of<br>Experience</span>
                             </div>
                         </div>
                     </div>
-                    <div class="about-text-side scroll-animation" data-animation="fade_from_right">
+                    <div class="col-lg-7 scroll-animation" data-animation="fade_from_right">
                         <h3 class="about-heading">Full Stack Developer &amp; Laravel Specialist</h3>
-                        <p>Since beginning my journey as a software engineer, I've been building scalable applications, crafting custom Laravel solutions, and turning complex requirements into simple, efficient systems.</p>
-                        <p>I'm quietly confident, naturally curious, and passionate about writing clean, structured code. I believe in continuous improvement — solving one real problem at a time while building systems that are practical, optimized, and future-ready.</p>
+                        <p class="about-para">Since beginning my journey as a software engineer, I've been building scalable applications, crafting custom Laravel solutions, and turning complex requirements into simple, efficient systems.</p>
+                        <p class="about-para">I'm quietly confident, naturally curious, and passionate about writing clean, structured code. I believe in continuous improvement — solving one real problem at a time while building systems that are practical, optimized, and future-ready.</p>
                         <div class="about-details-grid">
                             <div class="detail-item">
                                 <span class="detail-label">Name</span>
@@ -211,8 +214,8 @@
                     <h4 class="subtitle"><i class="las la-briefcase"></i> Resume</h4>
                     <h2 class="section-title">Education &amp; <span>Experience</span></h2>
                 </div>
-                <div class="resume-grid">
-                    <div class="resume-col">
+                <div class="row g-5">
+                    <div class="col-lg-6">
                         <h3 class="resume-col-title scroll-animation" data-animation="fade_from_left">
                             <i class="las la-graduation-cap"></i> Education
                         </h3>
@@ -227,7 +230,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="resume-col">
+                    <div class="col-lg-6">
                         <h3 class="resume-col-title scroll-animation" data-animation="fade_from_right">
                             <i class="las la-briefcase"></i> Experience
                         </h3>
@@ -269,38 +272,38 @@
                     <h4 class="subtitle"><i class="las la-stream"></i> Services</h4>
                     <h2 class="section-title">My <span>Specializations</span></h2>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="service-icon-wrap">
-                            <i class="las la-code"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>I build responsive, scalable, and secure web applications using modern frameworks and best practices.</p>
-                        <div class="service-footer">
-                            <span class="service-count">26 Projects</span>
-                            <i class="las la-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="service-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="service-icon-wrap">
-                            <i class="las la-tachometer-alt"></i>
-                        </div>
-                        <h3>Performance Optimization</h3>
-                        <p>Improve speed, database efficiency, caching strategies, and overall system scalability.</p>
-                        <div class="service-footer">
-                            <span class="service-count">12 Projects</span>
-                            <i class="las la-arrow-right"></i>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="service-card">
+                            <div class="service-icon-wrap"><i class="las la-code"></i></div>
+                            <h3>Web Development</h3>
+                            <p>I build responsive, scalable, and secure web applications using modern frameworks and best practices.</p>
+                            <div class="service-footer">
+                                <span class="service-count">26 Projects</span>
+                                <i class="las la-arrow-right"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="service-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="service-icon-wrap">
-                            <i class="las la-plug"></i>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="service-card">
+                            <div class="service-icon-wrap"><i class="las la-tachometer-alt"></i></div>
+                            <h3>Performance Optimization</h3>
+                            <p>Improve speed, database efficiency, caching strategies, and overall system scalability.</p>
+                            <div class="service-footer">
+                                <span class="service-count">12 Projects</span>
+                                <i class="las la-arrow-right"></i>
+                            </div>
                         </div>
-                        <h3>API Integration</h3>
-                        <p>Integrate third-party services, payment gateways, and build custom REST APIs seamlessly.</p>
-                        <div class="service-footer">
-                            <span class="service-count">7 Projects</span>
-                            <i class="las la-arrow-right"></i>
+                    </div>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="service-card">
+                            <div class="service-icon-wrap"><i class="las la-plug"></i></div>
+                            <h3>API Integration</h3>
+                            <p>Integrate third-party services, payment gateways, and build custom REST APIs seamlessly.</p>
+                            <div class="service-footer">
+                                <span class="service-count">7 Projects</span>
+                                <i class="las la-arrow-right"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -314,78 +317,96 @@
                     <h4 class="subtitle"><i class="las la-shapes"></i> Skills</h4>
                     <h2 class="section-title">My <span>Advantages</span></h2>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                            <span class="skill-name">HTML5</span>
-                            <span class="skill-pct">92%</span>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                                <span class="skill-name">HTML5</span>
+                                <span class="skill-pct">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                            <span class="skill-name">CSS3</span>
-                            <span class="skill-pct">87%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                                <span class="skill-name">CSS3</span>
+                                <span class="skill-pct">87%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-pct">83%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-pct">83%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="83"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-                            <span class="skill-name">Bootstrap</span>
-                            <span class="skill-pct">90%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                                <span class="skill-name">Bootstrap</span>
+                                <span class="skill-pct">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
-                            <span class="skill-name">Tailwind CSS</span>
-                            <span class="skill-pct">86%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
+                                <span class="skill-name">Tailwind CSS</span>
+                                <span class="skill-pct">86%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="86"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="86"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="./assets/images/wordpress.png" alt="WordPress">
-                            <span class="skill-name">WordPress</span>
-                            <span class="skill-pct">89%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="./assets/images/wordpress.png" alt="WordPress">
+                                <span class="skill-name">WordPress</span>
+                                <span class="skill-pct">89%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="89"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="89"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-pct">91%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-pct">91%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="91"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="91"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
-                            <span class="skill-name">Laravel</span>
-                            <span class="skill-pct">85%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel">
+                                <span class="skill-name">Laravel</span>
+                                <span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
                     </div>
-                    <div class="skill-card scroll-animation" data-animation="fade_from_bottom">
-                        <div class="skill-header">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                            <span class="skill-name">MySQL</span>
-                            <span class="skill-pct">93%</span>
+                    <div class="col-lg-4 col-md-6 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="skill-card">
+                            <div class="skill-header">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-pct">93%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
                         </div>
-                        <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
                     </div>
                 </div>
             </div>
@@ -398,102 +419,83 @@
                     <h4 class="subtitle"><i class="las la-grip-vertical"></i> Portfolio</h4>
                     <h2 class="section-title">Featured <span>Projects</span></h2>
                 </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item portfolio-wide scroll-animation" data-animation="fade_from_bottom">
-                        <div class="portfolio-inner">
-                            <a href="./assets/images/portfolio1.png" data-lightbox="portfolio">
-                                <img src="./assets/images/portfolio1.png" alt="Bureau Architecture Studio">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <ul class="portfolio-tags">
-                                        <li>Figma</li>
-                                        <li>WordPress</li>
-                                    </ul>
-                                    <h3>Bureau — Architecture Studio Website</h3>
-                                    <a href="./assets/images/portfolio1.png" data-lightbox="portfolio" class="portfolio-link">
-                                        <i class="las la-expand"></i>
-                                    </a>
+                <div class="row g-4">
+                    <div class="col-12 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="portfolio-item">
+                            <div class="portfolio-inner portfolio-wide">
+                                <a href="./assets/images/portfolio1.png" data-lightbox="portfolio">
+                                    <img src="./assets/images/portfolio1.png" alt="Bureau Architecture Studio">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <ul class="portfolio-tags"><li>Figma</li><li>WordPress</li></ul>
+                                        <h3>Bureau — Architecture Studio Website</h3>
+                                        <a href="./assets/images/portfolio1.png" data-lightbox="portfolio" class="portfolio-link"><i class="las la-expand"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="portfolio-item scroll-animation" data-animation="fade_from_left">
-                        <div class="portfolio-inner">
-                            <a href="./assets/images/portfolio2.png" data-lightbox="portfolio">
-                                <img src="./assets/images/portfolio2.png" alt="Moonex Theme">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <ul class="portfolio-tags">
-                                        <li>Bootstrap</li>
-                                        <li>Laravel/PHP</li>
-                                    </ul>
-                                    <h3>Moonex WordPress Theme</h3>
-                                    <a href="./assets/images/portfolio2.png" data-lightbox="portfolio" class="portfolio-link">
-                                        <i class="las la-expand"></i>
-                                    </a>
+                    <div class="col-md-6 scroll-animation" data-animation="fade_from_left">
+                        <div class="portfolio-item">
+                            <div class="portfolio-inner portfolio-half">
+                                <a href="./assets/images/portfolio2.png" data-lightbox="portfolio">
+                                    <img src="./assets/images/portfolio2.png" alt="Moonex Theme">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <ul class="portfolio-tags"><li>Bootstrap</li><li>Laravel/PHP</li></ul>
+                                        <h3>Moonex WordPress Theme</h3>
+                                        <a href="./assets/images/portfolio2.png" data-lightbox="portfolio" class="portfolio-link"><i class="las la-expand"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="portfolio-item scroll-animation" data-animation="fade_from_right">
-                        <div class="portfolio-inner">
-                            <a href="./assets/images/portfolio3.png" data-lightbox="portfolio">
-                                <img src="./assets/images/portfolio3.png" alt="Taskly Dashboard">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <ul class="portfolio-tags">
-                                        <li>HTML/CSS</li>
-                                        <li>PHP</li>
-                                    </ul>
-                                    <h3>Taskly Dashboard</h3>
-                                    <a href="./assets/images/portfolio3.png" data-lightbox="portfolio" class="portfolio-link">
-                                        <i class="las la-expand"></i>
-                                    </a>
+                    <div class="col-md-6 scroll-animation" data-animation="fade_from_right">
+                        <div class="portfolio-item">
+                            <div class="portfolio-inner portfolio-half">
+                                <a href="./assets/images/portfolio3.png" data-lightbox="portfolio">
+                                    <img src="./assets/images/portfolio3.png" alt="Taskly Dashboard">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <ul class="portfolio-tags"><li>HTML/CSS</li><li>PHP</li></ul>
+                                        <h3>Taskly Dashboard</h3>
+                                        <a href="./assets/images/portfolio3.png" data-lightbox="portfolio" class="portfolio-link"><i class="las la-expand"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="portfolio-item portfolio-wide scroll-animation" data-animation="fade_from_bottom">
-                        <div class="portfolio-inner">
-                            <a href="./assets/images/portfolio4.png" data-lightbox="portfolio">
-                                <img src="./assets/images/portfolio4.png" alt="Hinterland Real Estate">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <ul class="portfolio-tags">
-                                        <li>Bootstrap</li>
-                                        <li>JavaScript</li>
-                                        <li>PHP</li>
-                                    </ul>
-                                    <h3>Hinterland — Real Estate Site Redesign</h3>
-                                    <a href="./assets/images/portfolio4.png" data-lightbox="portfolio" class="portfolio-link">
-                                        <i class="las la-expand"></i>
-                                    </a>
+                    <div class="col-12 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="portfolio-item">
+                            <div class="portfolio-inner portfolio-wide">
+                                <a href="./assets/images/portfolio4.png" data-lightbox="portfolio">
+                                    <img src="./assets/images/portfolio4.png" alt="Hinterland Real Estate">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <ul class="portfolio-tags"><li>Bootstrap</li><li>JavaScript</li><li>PHP</li></ul>
+                                        <h3>Hinterland — Real Estate Site Redesign</h3>
+                                        <a href="./assets/images/portfolio4.png" data-lightbox="portfolio" class="portfolio-link"><i class="las la-expand"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="portfolio-item portfolio-wide scroll-animation" data-animation="fade_from_bottom">
-                        <div class="portfolio-inner">
-                            <a href="./assets/images/portfolio5.png" data-lightbox="portfolio">
-                                <img src="./assets/images/portfolio5.png" alt="Lewis Portfolio">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <ul class="portfolio-tags">
-                                        <li>Framer</li>
-                                    </ul>
-                                    <h3>Lewis Portfolio Framer Template</h3>
-                                    <a href="./assets/images/portfolio5.png" data-lightbox="portfolio" class="portfolio-link">
-                                        <i class="las la-expand"></i>
-                                    </a>
+                    <div class="col-12 scroll-animation" data-animation="fade_from_bottom">
+                        <div class="portfolio-item">
+                            <div class="portfolio-inner portfolio-wide">
+                                <a href="./assets/images/portfolio5.png" data-lightbox="portfolio">
+                                    <img src="./assets/images/portfolio5.png" alt="Lewis Portfolio">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <ul class="portfolio-tags"><li>Framer</li></ul>
+                                        <h3>Lewis Portfolio Framer Template</h3>
+                                        <a href="./assets/images/portfolio5.png" data-lightbox="portfolio" class="portfolio-link"><i class="las la-expand"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -509,12 +511,10 @@
                     <h4 class="subtitle"><i class="las la-envelope"></i> Contact</h4>
                     <h2 class="section-title">Let's Work <span>Together!</span></h2>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-info-side scroll-animation" data-animation="fade_from_left">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5 scroll-animation" data-animation="fade_from_left">
                         <h3 class="contact-info-title">Get in Touch</h3>
-                        <p class="contact-info-desc">
-                            Have a project in mind or want to discuss opportunities? I'd love to hear from you. Drop me a message and I'll get back to you within 24 hours.
-                        </p>
+                        <p class="contact-info-desc">Have a project in mind? I'd love to hear from you. Drop a message and I'll respond within 24 hours.</p>
                         <div class="contact-info-items">
                             <div class="contact-info-item">
                                 <div class="ci-icon"><i class="las la-envelope"></i></div>
@@ -539,57 +539,61 @@
                             </div>
                         </div>
                         <div class="contact-socials">
-                            <a href="https://github.com/devhassan26" target="_blank" class="contact-social-link">
-                                <i class="lab la-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/devhassan26" target="_blank" class="contact-social-link">
-                                <i class="lab la-linkedin-in"></i>
-                            </a>
-                            <a href="https://wa.me/923473547440" target="_blank" class="contact-social-link">
-                                <i class="lab la-whatsapp"></i>
-                            </a>
+                            <a href="https://github.com/devhassan26" target="_blank" class="contact-social-link"><i class="lab la-github"></i></a>
+                            <a href="https://www.linkedin.com/in/devhassan26" target="_blank" class="contact-social-link"><i class="lab la-linkedin-in"></i></a>
+                            <a href="https://wa.me/923473547440" target="_blank" class="contact-social-link"><i class="lab la-whatsapp"></i></a>
                         </div>
                     </div>
-                    <div class="contact-form-side scroll-animation" data-animation="fade_from_right">
+                    <div class="col-lg-7 scroll-animation" data-animation="fade_from_right">
                         <div class="contact-form-card">
-                            <div class="alert alert-success messenger-box-contact__msg" style="display:none;" role="alert">
-                                Your message was sent successfully.
-                            </div>
+                            <div class="alert alert-success messenger-box-contact__msg" style="display:none;" role="alert">Your message was sent successfully.</div>
                             <p id="required-msg" style="display:none;">* Marked fields are required.</p>
                             <form class="contact-form" method="POST" action="#">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="full-name">Full Name <sup>*</sup></label>
-                                        <input type="text" name="full-name" id="full-name" placeholder="Your full name">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="full-name">Full Name <sup>*</sup></label>
+                                            <input type="text" name="full-name" id="full-name" placeholder="Your full name">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email">Email <sup>*</sup></label>
-                                        <input type="email" name="email" id="email" placeholder="your@email.com">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email">Email <sup>*</sup></label>
+                                            <input type="email" name="email" id="email" placeholder="your@email.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phone-number">Phone <span>(optional)</span></label>
+                                            <input type="text" name="phone-number" id="phone-number" placeholder="+1 234 567 890">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="budget">Budget <span>(optional)</span></label>
+                                            <input type="number" name="budget" id="budget" placeholder="Project budget">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea name="message" id="message" placeholder="Tell me about your project..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group form-upload">
+                                            <label for="upload-attachment" style="position:relative;overflow:hidden;">
+                                                <i class="las la-cloud-upload-alt"></i> Add an attachment
+                                                <input type="file" name="file" id="upload-attachment" style="position:absolute;opacity:0;pointer-events:none;">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn-hire submit-btn" name="submit" type="submit" id="submit-form" disabled>
+                                            <i class="las la-paper-plane"></i> Send Message
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="phone-number">Phone <span>(optional)</span></label>
-                                        <input type="text" name="phone-number" id="phone-number" placeholder="+1 234 567 890">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="budget">Budget <span>(optional)</span></label>
-                                        <input type="number" name="budget" id="budget" placeholder="Project budget">
-                                    </div>
-                                </div>
-                                <div class="form-group form-group-full">
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" placeholder="Tell me about your project..."></textarea>
-                                </div>
-                                <div class="form-group form-group-full form-upload">
-                                    <label for="upload-attachment">
-                                        <i class="las la-cloud-upload-alt"></i> Add an attachment
-                                        <input type="file" name="file" id="upload-attachment">
-                                    </label>
-                                </div>
-                                <button class="btn-hire submit-btn" name="submit" type="submit" id="submit-form" disabled>
-                                    <i class="las la-paper-plane"></i> Send Message
-                                </button>
                             </form>
                         </div>
                     </div>
@@ -599,7 +603,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="custom-container">
             <div class="footer-inner">
@@ -619,36 +622,33 @@
     <script src="./assets/js/ajax-form.js"></script>
 
     <script>
-    // Role typing cycle
     (function () {
         var roles = ['Full Stack Developer', 'Laravel Developer', 'PHP Developer', 'Web Developer'];
         var i = 0;
         var el = document.getElementById('typed-role');
         if (!el) return;
         setInterval(function () {
-            el.classList.add('fade-out');
+            el.classList.add('role-fade-out');
             setTimeout(function () {
                 i = (i + 1) % roles.length;
                 el.textContent = roles[i];
-                el.classList.remove('fade-out');
+                el.classList.remove('role-fade-out');
             }, 350);
         }, 2800);
     })();
-
-    // Skill bar animation on scroll
     (function () {
         var fills = document.querySelectorAll('.skill-fill');
         if (!fills.length) return;
-        var observer = new IntersectionObserver(function (entries) {
+        var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     var el = entry.target;
                     el.style.width = el.getAttribute('data-width') + '%';
-                    observer.unobserve(el);
+                    io.unobserve(el);
                 }
             });
         }, { threshold: 0.3 });
-        fills.forEach(function (el) { observer.observe(el); });
+        fills.forEach(function (el) { io.observe(el); });
     })();
     </script>
 
